@@ -22,7 +22,7 @@ public class JDinkJsonObjectOutput implements JDinkObjectOutput {
 			directory.mkdirs();
 			JSONSerializer serializer = new JSONSerializer();
 			serializer.include("*");
-			String s = serializer.prettyPrint(o);
+			String s = serializer.prettyPrint(true).serialize(o);
 			OutputStream out = null;
 			try {
 				out = new FileOutputStream(file);
